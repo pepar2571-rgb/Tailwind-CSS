@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Quiroz | Portafolio</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="bg-[#0d0a20] text-white">
+     <!-- Barra de navegación -->
+    <header class="bg-white fixed top-0 w-full">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <h1 class="text-xl font-bold text-gray-700">MiApp</h1>
+
+        <!-- Botón menú móvil -->
+        <button id="openSidebar" class="md:hidden text-2xl text-gray-700">
+          ☰
+        </button>
+
+        <!-- Menú normal desktop -->
+        <nav class="hidden md:flex gap-8">
+          <a href="#" class="text-gray-700 hover:text-blue-600">Inicio</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">Servicios</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">Nosotros</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">Contacto</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Overlay oscuro -->
+    <!-- Overlay Es el efecto de que el fondo se vea oscuro -->
+    <!--inset:0 👉 top: 0; right: 0; bottom: 0; left: 0;-->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden"></div>
+    `
+    <!-- Sidebar lateral / Menú laterral -->
+    <aside
+      id="sidebar"
+      class="fixed left-0 top-0 h-full w-64 bg-white transform -translate-x-full transition-transform p-6 flex flex-col gap-6"
+    >
+      <button id="closeSidebar" class="text-2xl text-gray-700 self-end">
+        ✕
+      </button>
+
+      <a href="#" class="text-gray-700 hover:text-blue-600 text-lg">Inicio</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 text-lg"
+        >Servicios</a
+      >
+      <a href="#" class="text-gray-700 hover:text-blue-600 text-lg">Nosotros</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 text-lg">Contacto</a>
+    </aside>
+
+    <main>
+      <section
+        class="flex flex-col md:flex-row items-center p-12 gap-10 container mx-auto"
+      >
+        <div class="sm:w-full md:w-1/2 text-center  md:text-left">
+          <h1 class="font-bold">
+            <span class="text-4xl md:text-5xl block">Hola! soy</span>
+            <span class="text-5xl md:text-6xl block text-blue-500 mt-3"
+              >Samuel Quiroz</span
+            >
+          </h1>
+          <p class="text-3xl text-gray-300 mt-1">Desarrollador Frontend</p>
+          <p class="mt-6 text-xl text-gray-300">
+            Ingeniero de sitemas, especializado en desarrollo web con
+            tecnologias modernas como React y Node. Me encanta la tecnologia y
+            la programacion
+          </p>
+          <div class="mt-5 flex flex-col md:flex-row items-center">
+            <a
+              class="bg-blue-500 text-white px-6 py-2 font-semibold rounded-full hover:bg-blue-600 md:mr-4 my-3"
+            >
+              Sobre mi X
+            </a>
+            <a
+              class="bg-blue-500 text-white px-6 py-2 sm:my-3 font-semibold rounded-full hover:bg-blue-600"
+            >
+              Descargar HV
+            </a>
+          </div>
+        </div>
+        <div class="sm:w-full md:w-1/2 flex items-center justify-center">
+          <img
+            src="./imagenes/profile.png"
+            class="w-64 sm:h-64 md:w-70 md:h-70 lg:w-85 lg:h-85"
+          />
+        </div>
+      </section>
+      <section class="bg-[#13182c] p-16">
+        <div class="container mx-auto">
+          <h2 class="text-7xl font-bold text-center">
+            ¿Quién <span class="text-blue-500">soy</span>?
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 mt-14 place-items-center"
+          >
+            <img src="./imagenes/profile.png" class="h-50 w-50" />
+            <div class="text-center md:text-right mb-5 ">
+              <h3 class="text-3xl font-bold mb-3 ">Ingeniero sistemas</h3>
+              <p class="justify-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quibusdam vero ab autem nesciunt consequuntur eius,
+                exercitationem optio odio! Saepe velit architecto dignissimos.
+                Dolores nulla aut quidem, cumque quasi corrupti esse!
+              </p>
+            </div>
+
+            <img src="./imagenes/profile.png" class="h-50 w-50 md:order-2" />
+            <div class="text-center md:text-left">
+              <h3 class="text-3xl font-bold mb-3">Desarrollador Frontend</h3>
+              <p class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quibusdam vero ab autem nesciunt consequuntur eius,
+                exercitationem optio odio! Saepe velit architecto dignissimos.
+                Dolores nulla aut quidem, cumque quasi corrupti esse!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    openBtn.addEventListener("click", () => {
+      sidebar.classList.remove("-translate-x-full");
+      overlay.classList.remove("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+
+    overlay.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  </script>
+</html>
